@@ -95,8 +95,8 @@
 } */
 
 body{
-  font-family: "Trebuchet MS", Helvetica, sans-serif; 
-  background-image:url(backgrounds/background_dashboard.jpg);
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background-image:url(background_dashboard.jpg);
   background-repeat:no-repeat;
   background-position:center center;
   background-attachment:fixed;

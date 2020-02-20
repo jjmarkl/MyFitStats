@@ -96,7 +96,7 @@
 
 body{
   font-family:"Trebuchet MS", Helvetica, sans-serif;
-  background-image:url(backgrounds/background_physique.jpg);
+  background-image:url(background_physique.jpg);
   background-repeat:no-repeat;
   background-position:center center;
   background-attachment:fixed;
