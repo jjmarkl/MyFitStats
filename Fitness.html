@@ -1,0 +1,442 @@
+<!-- FITNESS DASHBOARD PAGE FOR FITNESS TRACKING APPLICATION - MYFITSTATS
+________________________________________________________________________________
+Developed by: Jonathan Markl
+Version: 1.0
+Date of Last Edit: Feb 15, 2020
+________________________________________________________________________________
+ -->
+
+<!DOCTYPE html>
+
+<!-- CODE IN THIS SECTION COMMON TO ALL DASHBOARD PAGES
+________________________________________________________________________________
+-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Below line for mobile formatting use -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MYFITSTATS - Dashboard</title>
+    <link rel="stylesheet" href="Fitness.css">
+  </head>
+
+  <body>
+
+    <nav class="navbar">
+      <img class="logo" src="logo.png"  alt="logo"/>
+      <span class="open-slide">
+        <a href="#" onclick="openSideMenu()">
+          <svg width="30" height="30">
+            <path d="M0,2 30,2" stroke="#fff" stroke-width="4"/>
+            <path d="M0,10 30,10" stroke="#fff" stroke-width="4"/>
+            <path d="M0,18 30,18" stroke="#fff" stroke-width="4"/>
+          </svg>
+        </a>
+      </span>
+
+      <ul class="navbar-nav">
+        <li><a href="Dashboard.html">DASHBOARD</a></li>
+        <li><a id="current-page" href="#">FITNESS</a></li>
+        <li><a href="Physique.html">PHYSIQUE</a></li>
+        <li><a href="Wellness.html">WELLNESS</a></li>
+        <li><a href="#">ACCOUNT</a></li>
+      </ul>
+    </nav>
+
+    <div id="side-menu" class="side-nav">
+      <a href="#" class="btn-close" onclick="closeSideMenu()">&times;</a>
+      <a href="Dashboard.html">DASHBOARD</a>
+      <a id="current-page" href="#">FITNESS</a>
+      <a href="Physique.html">PHYSIQUE</a>
+      <a href="Wellness.html">WELLNESS</a>
+      <a href="#">ACCOUNT</a>
+    </div>
+
+    <script>
+
+      var chest = 90;
+      var lats = 81;
+      var shoulders = 75;
+      var traps = 68;
+      var rear_delts = 73;
+      var biceps = 84;
+      var triceps = 87;
+      var forearms = 57;
+
+      var abdominals = 51;
+      var obliques = 48;
+
+      var quads = 71;
+      var hamstrings = 51;
+      var glutes = 41;
+      var hips_groin = 44;
+      var calves = 82;
+
+      var endurance = 56;
+      var agility = 63;
+
+      var count_blank_all = 0.01;
+      var count_blank_upper_body = 0.01;
+      var count_blank_core = 0.01
+      var count_blank_lower_body = 0.01;
+      var count_blank_cardio = 0.01;
+
+      if (chest > 0) {
+        count_blank_all++;
+        count_blank_upper_body++;
+      }
+      if (lats > 0) {
+        count_blank_all++;
+        count_blank_upper_body++;
+      }
+      if (shoulders > 0){
+        count_blank_all++;
+        count_blank_upper_body++;
+      }
+      if (traps > 0){
+        count_blank_all++;
+        count_blank_upper_body++;
+      }
+      if (rear_delts > 0){
+        count_blank_all++;
+        count_blank_upper_body++;
+      }
+      if (biceps > 0){
+        count_blank_all++;
+        count_blank_upper_body++;
+      }
+      if (triceps > 0){
+        count_blank_all++;
+        count_blank_upper_body++;
+      }
+      if (forearms > 0){
+        count_blank_all++;
+        count_blank_upper_body++;
+      }
+      if (abdominals > 0){
+        count_blank_all++;
+        count_blank_core++;
+      }
+      if (obliques > 0){
+        count_blank_all++;
+        count_blank_core++;
+      }
+      if (quads > 0){
+        count_blank_all++;
+        count_blank_lower_body++;
+      }
+      if (hamstrings > 0){
+        count_blank_all++;
+        count_blank_lower_body++;
+      }
+      if (glutes > 0){
+        count_blank_all++;
+        count_blank_lower_body++;
+      }
+      if (hips_groin > 0){
+        count_blank_all++;
+        count_blank_lower_body++;
+      }
+      if (calves > 0){
+        count_blank_all++;
+        count_blank_lower_body++;
+      }
+      if (endurance > 0){
+        count_blank_all++;
+        count_blank_cardio++;
+      }
+      if (agility > 0){
+        count_blank_all++;
+        count_blank_cardio++;
+      }
+
+      var strength = parseInt((chest + lats + shoulders + traps + rear_delts + biceps +
+        triceps + forearms + abdominals + obliques + quads + hamstrings +
+        glutes + hips_groin + calves)/count_blank_all);
+
+      var upper_body = parseInt((chest + lats + shoulders + traps + rear_delts + biceps +
+        triceps + forearms)/count_blank_upper_body);
+
+      var core = parseInt((abdominals + obliques)/count_blank_core);
+
+      var lower_body = parseInt((quads + hamstrings + glutes + hips_groin + calves)/5);
+
+      var cardio = parseInt((endurance + agility)/2);
+
+      function openSideMenu(){
+        document.getElementById('side-menu').style.width = '250px';
+        document.getElementById('main').style.marginLeft = '250px';
+      }
+
+      function closeSideMenu(){
+        document.getElementById('side-menu').style.width = '0';
+        document.getElementById('main').style.marginLeft = '0';
+      }
+
+      function statfill(){
+        document.getElementById('strength').style.width = strength + "%";
+
+        document.getElementById('upper_body').style.width = upper_body + "%";
+        document.getElementById('chest').style.width = chest + "%";
+        document.getElementById('lats').style.width = lats + "%";
+        document.getElementById('shoulders').style.width = shoulders + "%";
+        document.getElementById('traps').style.width = traps + "%";
+        document.getElementById('rear_delts').style.width = rear_delts + "%";
+        document.getElementById('biceps').style.width = biceps + "%";
+        document.getElementById('triceps').style.width = triceps + "%";
+        document.getElementById('forearms').style.width = forearms + "%";
+
+        document.getElementById('core').style.width = core + "%";
+        document.getElementById('abdominals').style.width = abdominals + "%";
+        document.getElementById('obliques').style.width = obliques + "%";
+
+        document.getElementById('lower_body').style.width = lower_body + "%";
+        document.getElementById('quads').style.width = quads + "%";
+        document.getElementById('hamstrings').style.width = hamstrings + "%";
+        document.getElementById('glutes').style.width = glutes + "%";
+        document.getElementById('hips_groin').style.width = hips_groin + "%";
+        document.getElementById('calves').style.width = calves + "%";
+
+        document.getElementById('cardio').style.width = cardio + "%";
+        document.getElementById('endurance').style.width = endurance + "%";
+        document.getElementById('agility').style.width = agility + "%";
+      }
+
+      window.onload = statfill;
+    </script>
+
+<!-- ___________________________________________________________________________
+CODE FOLLOWING THIS BREAK IS UNIQUE TO THIS PAGE
+________________________________________________________________________________
+-->
+    <div class="row1">
+
+      <div class="col1">
+        <h1>TITLE</h1>
+        <img class="body_map" src="male_blank.png" alt="img">
+        <img class="body_map_color" src="male_biceps_green.png" alt="img">
+        <img class="body_map_color" src="male_shoulders_orange.png" alt="img">
+        <img class="body_map_color" src="male_chest_green.png" alt="img">
+        <img class="body_map_color" src="male_glutes_orange.png" alt="img">
+        <img class="body_map_color" src="male_calves_orange.png" alt="img">
+        <img class="body_map_color" src="male_forearms_red.png" alt="img">
+        <img class="body_map_color" src="male_obliques_orange.png" alt="img">
+        <img class="body_map_color" src="male_abs_red.png" alt="img">
+        <img class="body_map_key" src="body_map_key.png" alt="img">
+      </div>
+
+      <div onclick="statfill()" class="col2">
+        <h1>TITLE</h1>
+
+        <a class="stat_lvl1" id="first_stat" href="#">STRENGTH</a>
+            <div class="container_lvl1">
+              <div class="bar" id="strength">
+                <script type="text/javascript">
+                  document.write(strength)
+                </script>
+              </div>
+            </div>
+
+        <a class="stat_lvl2" href="#">UPPER BODY</a>
+          <div class="container_lvl2">
+            <div class="bar" id="upper_body">
+              <script type="text/javascript">
+                document.write(upper_body)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">CHEST</a>
+          <div class="container_lvl3">
+            <div class="bar" id="chest">
+              <script type="text/javascript">
+                document.write(chest)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">LATS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="lats">
+              <script type="text/javascript">
+                document.write(lats)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">SHOULDERS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="shoulders">
+              <script type="text/javascript">
+                document.write(shoulders)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">TRAPS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="traps">
+              <script type="text/javascript">
+                document.write(traps)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">REAR DELTS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="rear_delts">
+              <script type="text/javascript">
+                document.write(rear_delts)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">BICEPS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="biceps">
+              <script type="text/javascript">
+                document.write(biceps)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">TRICEPS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="triceps">
+              <script type="text/javascript">
+                document.write(triceps)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">FOREARMS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="forearms">
+              <script type="text/javascript">
+                document.write(forearms)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl2" href="#">CORE</a>
+          <div class="container_lvl2">
+            <div class="bar" id="core">
+              <script type="text/javascript">
+                document.write(core)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">ABDOMINALS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="abdominals">
+              <script type="text/javascript">
+                document.write(abdominals)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">OBLIQUES</a>
+          <div class="container_lvl3">
+            <div class="bar" id="obliques">
+              <script type="text/javascript">
+                document.write(obliques)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl2" href="#">LOWER BODY</a>
+          <div class="container_lvl2">
+            <div class="bar" id="lower_body">
+              <script type="text/javascript">
+                document.write(lower_body)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">QUADS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="quads">
+              <script type="text/javascript">
+                document.write(quads)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">HAMSTRINGS</a>
+          <div class="container_lvl3">
+            <div class="bar" id="hamstrings">
+              <script type="text/javascript">
+                document.write(obliques)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">GLUTES</a>
+          <div class="container_lvl3">
+            <div class="bar" id="glutes">
+              <script type="text/javascript">
+                document.write(glutes)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">HIPS / GROIN</a>
+          <div class="container_lvl3">
+            <div class="bar" id="hips_groin">
+              <script type="text/javascript">
+                document.write(hips_groin)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl3" href="#">CALVES</a>
+          <div class="container_lvl3">
+            <div class="bar" id="calves">
+              <script type="text/javascript">
+                document.write(calves)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl1" href="#">CARDIO</a>
+            <div class="container_lvl1">
+              <div class="bar" id="cardio">
+                <script type="text/javascript">
+                  document.write(cardio)
+                </script>
+              </div>
+            </div>
+
+        <a class="stat_lvl2" href="#">ENDURANCE</a>
+          <div class="container_lvl2">
+            <div class="bar" id="endurance">
+              <script type="text/javascript">
+                document.write(endurance)
+              </script>
+            </div>
+          </div>
+
+        <a class="stat_lvl2" href="#">AGILITY</a>
+          <div class="container_lvl2">
+            <div class="bar" id="agility">
+              <script type="text/javascript">
+                document.write(agility)
+              </script>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+  </body>
+
+  <footer class="footer">
+    <ul>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </Footer>
+
+</html>
