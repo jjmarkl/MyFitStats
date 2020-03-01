@@ -27,19 +27,19 @@ body{
   color: rgb(153, 183, 223);
   align-items: center;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 3px;
   display: inline;
 }
 
 .select_data select{
-  width: 130px;
+  width: 110px;
 }
 
 .log_exercise{
   position: fixed;
   top: 65px;
-  right: 15px;
+  right: 12px;
   font-weight: bold;
   background-color:rgba(30, 30, 30, 0.95);
   border-style: inset;
@@ -54,12 +54,12 @@ body{
   color: rgb(153, 183, 223);
   align-items: center;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
 }
 
 .log_exercise img{
   float: left;
-  height: 0.9rem;
+  height: 0.8rem;
   margin: 3px;
 }
 
@@ -83,7 +83,6 @@ body{
   background-color:rgba(230, 230, 230, 0.95);
   color: white;
   text-align: center;
-  font-size: 0.7em;
   border-radius: 10px;
   border-style: inset;
   border-color: black;
@@ -109,7 +108,7 @@ body{
 
 .col1 .col1_text p{
   margin-top: 5px;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   padding: 2px;
 }
 
@@ -147,7 +146,7 @@ body{
 
 .col2 .col2_text p{
   margin-top: 5px;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   padding: 2px;
 }
 
