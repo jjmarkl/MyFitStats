@@ -12,7 +12,7 @@ body{
 .select_data{
   position: fixed;
   top: 65px;
-  left: 7px;
+  left: 12px;
   font-weight: bold;
   background-color:rgba(30, 30, 30, 0.95);
   border-style: inset;
@@ -39,7 +39,7 @@ body{
 .log_exercise{
   position: fixed;
   top: 65px;
-  right: 7px;
+  right: 12px;
   font-weight: bold;
   background-color:rgba(30, 30, 30, 0.95);
   border-style: inset;
@@ -78,7 +78,7 @@ body{
 .col1{
   float: left;
   width: 48%;
-  margin: 5px;
+  margin: 7px;
   margin-bottom: 25px;
   background-color:rgba(230, 230, 230, 0.95);
   color: white;
@@ -115,7 +115,7 @@ body{
 .col2{
   float: right;
   width: 48%;
-  margin: 5px;
+  margin: 7px;
   margin-bottom: 25px;
   background-color:rgba(230, 230, 230, 0.95);
   color: white;
@@ -148,6 +148,13 @@ body{
   margin-top: 5px;
   font-size: 0.6rem;
   padding: 2px;
+}
+
+.col2_text img{
+width: 90%;
+align: center;
+opacity: 1;
+margin-bottom: -5px;
 }
 
 @media (max-width: 900px) {
