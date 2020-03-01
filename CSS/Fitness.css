@@ -12,7 +12,7 @@ body{
 .select_data{
   position: fixed;
   top: 65px;
-  left: 15px;
+  left: 7px;
   font-weight: bold;
   background-color:rgba(30, 30, 30, 0.95);
   border-style: inset;
@@ -39,7 +39,7 @@ body{
 .log_exercise{
   position: fixed;
   top: 65px;
-  right: 12px;
+  right: 7px;
   font-weight: bold;
   background-color:rgba(30, 30, 30, 0.95);
   border-style: inset;
@@ -54,7 +54,7 @@ body{
   color: rgb(153, 183, 223);
   align-items: center;
   text-decoration: none;
-  font-size: 1.0rem;
+  font-size: 0.95rem;
 }
 
 .log_exercise img{
