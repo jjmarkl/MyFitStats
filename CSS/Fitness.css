@@ -71,14 +71,14 @@ body{
   display:flex;
   flex-wrap: wrap;
   position: absolute;
-  top: 100px;
+  top: 110px;
   width: 100%;
 }
 
 .col1{
   float: left;
   width: 48%;
-  margin: 7px;
+  margin: 5px;
   margin-bottom: 25px;
   background-color:rgba(230, 230, 230, 0.95);
   color: white;
@@ -115,7 +115,7 @@ body{
 .col2{
   float: right;
   width: 48%;
-  margin: 7px;
+  margin: 5px;
   margin-bottom: 25px;
   background-color:rgba(230, 230, 230, 0.95);
   color: white;
@@ -164,13 +164,12 @@ margin-bottom: -5px;
   .col1,
   .col2 {
       width: 94%;
-      justify-content: center;
   }
 }
 
 @keyframes fadein{
   0% {opacity: 0;}
-  100% {opacity: 0.6;}
+  100% {opacity: 1;}
 }
 
 .body_map{
@@ -178,18 +177,20 @@ margin-bottom: -5px;
   position: relative;
   top: 0px;
   z-index: 0;
+  margin-top: 19px;
 }
 
 .body_map_color{
-  opacity: 0.7;
   width: inherit;
+  opacity: 0;
   position: absolute;
-  top: 60px;
-  left: 9px;
+  top: 105.5px;
+  left: 7px;
   animation: fadein 6s;
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
   z-index: 1;
+  margin-top: 20px;
 }
 
 .body_map_key{
@@ -198,6 +199,7 @@ margin-bottom: -5px;
   position: relative;
   z-index: 0;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .stat_lvl1{
@@ -244,8 +246,7 @@ margin-bottom: -5px;
   margin-left: 6.6rem;
   border-style: inset;
   border-color: black;
-  border-width: 1.5px;
-  border-radius: 7px;
+  border-width: 1px;
 }
 
 .container_lvl2 {
@@ -260,7 +261,7 @@ margin-bottom: -5px;
   margin-left: 6.6rem;
   border-style: inset;
   border-color: black;
-  border-width: 1.5px;
+  border-width: 1px;
   border-radius: 7px;
 }
 
@@ -276,7 +277,7 @@ margin-bottom: -5px;
   margin-left: 6.6rem;
   border-style: inset;
   border-color: black;
-  border-width: 1.5px;
+  border-width: 1px;
   border-radius: 7px;
 }
 
@@ -286,9 +287,16 @@ margin-bottom: -5px;
   width: 0%;
   text-align: center;
   background-color: #064e70;
+  border-style: inset;
   border-color: black;
-  border-width: 2px;
-  border-radius: 3px;
+  border-width: 0.5px;
+  border-radius: 6px;
+}
+
+@media (max-width: 1000px){
+  .body_map{
+    margin-top: 17.5px;
+  }
 }
 
 @media (max-width: 1000px){
@@ -299,7 +307,7 @@ margin-bottom: -5px;
   }
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1600px){
   .container_lvl2,
   .container_lvl3 {
     margin-top: 0.6rem;

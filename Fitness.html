@@ -20,6 +20,15 @@ ________________________________________________________________________________
     <title>MYFITSTATS - Dashboard</title>
     <link rel="stylesheet" href="CSS/Common.css">
     <link rel="stylesheet" href="CSS/Fitness.css">
+    <script src="JS/color_body_map.js"></script>
+    <script src="JS/example.js"></script>
+    <script src="JS/calc_stats.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+        statfill();
+        color_body_map();
+      }
+    </script>
   </head>
 
   <body>
@@ -54,98 +63,7 @@ ________________________________________________________________________________
       <a href="#">ACCOUNT</a>
     </div>
 
-    <script src="JS/example0.js"></script>
-
     <script>
-
-      var count_blank_all = 0.01;
-      var count_blank_upper_body = 0.01;
-      var count_blank_core = 0.01
-      var count_blank_lower_body = 0.01;
-      var count_blank_cardio = 0.01;
-
-      if (chest > 0) {
-        count_blank_all++;
-        count_blank_upper_body++;
-      }
-      if (lats > 0) {
-        count_blank_all++;
-        count_blank_upper_body++;
-      }
-      if (shoulders > 0){
-        count_blank_all++;
-        count_blank_upper_body++;
-      }
-      if (traps > 0){
-        count_blank_all++;
-        count_blank_upper_body++;
-      }
-      if (rear_delts > 0){
-        count_blank_all++;
-        count_blank_upper_body++;
-      }
-      if (biceps > 0){
-        count_blank_all++;
-        count_blank_upper_body++;
-      }
-      if (triceps > 0){
-        count_blank_all++;
-        count_blank_upper_body++;
-      }
-      if (forearms > 0){
-        count_blank_all++;
-        count_blank_upper_body++;
-      }
-      if (abdominals > 0){
-        count_blank_all++;
-        count_blank_core++;
-      }
-      if (obliques > 0){
-        count_blank_all++;
-        count_blank_core++;
-      }
-      if (quads > 0){
-        count_blank_all++;
-        count_blank_lower_body++;
-      }
-      if (hamstrings > 0){
-        count_blank_all++;
-        count_blank_lower_body++;
-      }
-      if (glutes > 0){
-        count_blank_all++;
-        count_blank_lower_body++;
-      }
-      if (hips_groin > 0){
-        count_blank_all++;
-        count_blank_lower_body++;
-      }
-      if (calves > 0){
-        count_blank_all++;
-        count_blank_lower_body++;
-      }
-      if (endurance > 0){
-        count_blank_all++;
-        count_blank_cardio++;
-      }
-      if (agility > 0){
-        count_blank_all++;
-        count_blank_cardio++;
-      }
-
-      var strength = parseInt((chest + lats + shoulders + traps + rear_delts + biceps +
-        triceps + forearms + abdominals + obliques + quads + hamstrings +
-        glutes + hips_groin + calves)/count_blank_all);
-
-      var upper_body = parseInt((chest + lats + shoulders + traps + rear_delts + biceps +
-        triceps + forearms)/count_blank_upper_body);
-
-      var core = parseInt((abdominals + obliques)/count_blank_core);
-
-      var lower_body = parseInt((quads + hamstrings + glutes + hips_groin + calves)/5);
-
-      var cardio = parseInt((endurance + agility)/2);
-
       function openSideMenu(){
         document.getElementById('side-menu').style.width = '250px';
         document.getElementById('main').style.marginLeft = '250px';
@@ -185,7 +103,6 @@ ________________________________________________________________________________
         document.getElementById('agility').style.width = agility + "%";
       }
 
-      window.onload = statfill;
     </script>
 
 <!-- ___________________________________________________________________________
@@ -216,6 +133,10 @@ ________________________________________________________________________________
           </p>
         </div>
         <img class="body_map" src="images/body_map/male_blank.png" alt="img">
+        <img class="body_map_color" id="traps_map_color">
+        <img class="body_map_color" id="shoulders_map_color">
+        <img class="body_map_color" id="rear_delts_map_color">
+        <img class="body_map_color" id="abs_map_color">
         <!-- <img class="body_map_color" src="images/body_map/male_biceps_green.png" alt="img">
         <img class="body_map_color" src="images/body_map/male_shoulders_orange.png" alt="img">
         <img class="body_map_color" src="images/body_map/male_chest_green.png" alt="img">
@@ -231,8 +152,8 @@ ________________________________________________________________________________
 
         <div class="col2_text">
           <h1>PERFORMANCE STATS SUMMARY</h1>
-          <p>The below stats are based on typical performance for your age and gender.
-          <br>Use the LOG EXERCISE button to update performance stats.
+          <p>Use the LOG EXERCISE button to update performance stats.
+          <br>The below stats are based on typical performance for your age, weight, and gender.
           <img src="images/performance_levels.png" alt="performance levels">
           </p>
         </div>
